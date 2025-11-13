@@ -1,0 +1,47 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
+import Packages from "../components/Packages.astro";
+import Article from "../components/Article.astro";
+import Button from "../components/Button.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/style.css";
+
+const url = "https://tyvxgiepuwgxaquhxcxp.supabase.co/rest/v1/Packages";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5dnhnaWVwdXdneGFxdWh4Y3hwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5ODI0NDgsImV4cCI6MjA3ODU1ODQ0OH0.nJ50rD5T9tPRx3PqN7pPuGBmZXtixrVO59MIThBhcac";
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const supaRequest = await fetch(url, options);
+const supaData = await supaRequest.json();
+
+console.log("supaData", supaData);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+    <title>SoundWheel Erhverv</title>
+  </head>
+  <body>
+    <Navigation />
+    <h1>Astro</h1>
+
+    {
+      supaData.map((pkg, i) => {
+        return <Packages title={pkg.title} body={pkg.subtext} price={pkg.price} />;
+      })
+    }
+
+    <Packages />
+  </body>
+</html>

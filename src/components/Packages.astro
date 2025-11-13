@@ -1,0 +1,14 @@
+---
+import Button from "./Button.astro";
+const { title, body, link, price } = Astro.props;
+import "../styles/style.css";
+---
+
+<li class="packages">
+  <h3>{title}</h3>
+  <p>{body}</p>
+  <p>Abonnement</p>
+  <p>{price}</p>
+
+  <Button link={link} />
+</li>
