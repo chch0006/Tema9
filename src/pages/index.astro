@@ -34,14 +34,11 @@ console.log("supaData", supaData);
   </head>
   <body>
     <Navigation />
-    <h1>Pakker og priser</h1>
- <div class="packages-container">
     {
       supaData.map((pkg, i) => {
         return <Packages title={pkg.title} body={pkg.subtext} price={pkg.price} />;
       })
     }
-    </div>
 
     <Packages />
   </body>
