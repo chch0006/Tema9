@@ -8,6 +8,14 @@ img {
   max-width: 100%;
 }
 
+h1 {
+  font-family: "Crimson Text", serif;
+}
+
+h2 {
+  font-family: "Crimson Text", serif;
+}
+
 p {
   font-family: "Open Sans", sans-serif;
 }

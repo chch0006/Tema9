@@ -37,11 +37,9 @@ console.log("supaData", supaData);
     <h1>Astro</h1>
 
     {
-      supaData.map((pkg, i) => {
-        return <Packages title={pkg.title} body={pkg.subtext} price={pkg.price} />;
+      supaData.map((pkg) => {
+        return <Packages data={pkg} />;
       })
     }
-
-    <Packages />
   </body>
 </html>

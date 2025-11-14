@@ -1,14 +1,13 @@
 ---
 import Button from "./Button.astro";
-const { title, body, link, price } = Astro.props;
 import "../styles/style.css";
+const { packages, data } = Astro.props;
 ---
 
-<li class="packages">
-  <h3>{title}</h3>
-  <p>{body}</p>
+<li class={packages}>
+  <h3>{data.title}</h3>
+  <p>{data.subtext}</p>
   <p>Abonnement</p>
-  <p>{price}</p>
-
-  <Button link={link} />
+  <p>{data.price}</p>
+  <a href=`/pkg/${data.slug}`> jksjkks </a>
 </li>

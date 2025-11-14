@@ -1,0 +1,27 @@
+---
+export async function getStaticPaths() {
+  const url = "https://tyvxgiepuwgxaquhxcxp.supabase.co/rest/v1/Packages";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5dnhnaWVwdXdneGFxdWh4Y3hwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5ODI0NDgsImV4cCI6MjA3ODU1ODQ0OH0.nJ50rD5T9tPRx3PqN7pPuGBmZXtixrVO59MIThBhcac";
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const supaRequest = await fetch(url, options);
+  const supaData = await supaRequest.json();
+
+  return supaData.map((pkg) => {
+    return {
+      params: { slug: pkg.slug },
+      props: { pkg },
+    };
+  });
+}
+
+const { pkg } = Astro.props;
+
+console.log("pkg", pkg);
+---
+
+<h1>jdjjdj</h1>
