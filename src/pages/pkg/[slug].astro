@@ -1,4 +1,7 @@
 ---
+import Navigation from "../../components/Navigation.astro";
+import "../../styles/style.css";
+
 export async function getStaticPaths() {
   const url = "https://tyvxgiepuwgxaquhxcxp.supabase.co/rest/v1/Packages";
   const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5dnhnaWVwdXdneGFxdWh4Y3hwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5ODI0NDgsImV4cCI6MjA3ODU1ODQ0OH0.nJ50rD5T9tPRx3PqN7pPuGBmZXtixrVO59MIThBhcac";
@@ -24,4 +27,124 @@ const { pkg } = Astro.props;
 console.log("pkg", pkg);
 ---
 
-<h1>jdjjdj</h1>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+    <title>SoundWheel Erhverv</title>
+  </head>
+  <body>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <div class="item">
+        <div>
+          <h1>{pkg.title}</h1>
+
+          <ul>
+            <li>Musikdrevne visualiseringsøvelser</li>
+            <li>Dansk eller engelsk guide</li>
+            <li>Mulighed for at slå guide til og fra</li>
+            <li>6 temaer</li>
+            <li>Mere musik, mindre tale</li>
+            <li>Opret nemt dine medarbejdere</li>
+            <li>Intropakke med promomatriale</li>
+            <li>Tutorialvideoer med nem on-boarding</li>
+          </ul>
+          <p class="child">Fuld adgang til SoundWheel Kids</p>
+          <ul>
+            <li>Lydrejser for Børn</li>
+            <li>4 temaer</li>
+          </ul>
+        </div>
+        <div class="price-section">
+          <p>Pris pr. abonnement</p>
+          <div class="price">
+            <span class="big">{pkg.price}</span>
+            <span class="small">/ år (ekskl. moms)</span>
+          </div>
+          <p class="betaling-knap">Gå til betaling</p>
+        </div>
+      </div>
+
+      <style>
+        ul {
+          list-style: disc;
+          margin-left: 20px;
+          font-family: "Open Sans", sans-serif;
+          padding-bottom: 20px;
+        }
+        main {
+          background-color: #cec4c3;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 30px;
+        }
+
+        .item {
+          background-color: white;
+          padding: 40px;
+          border-radius: 20px;
+          max-width: 700px;
+          width: 100%;
+        }
+
+        .child {
+          padding: 0 0 5px 0;
+        }
+
+        .price {
+          padding: 10px 0;
+        }
+
+        h1 {
+          padding-bottom: 15px;
+          font-weight: 550;
+        }
+
+        .big {
+          font-size: 1.5rem;
+          font-weight: 700;
+          font-family: "Crimson Text", serif;
+        }
+        .small {
+          font-size: 0.9rem;
+          color: #666;
+          font-family: "Crimson Text", serif;
+        }
+
+        .betaling-knap {
+          background-color: #3d1112;
+          display: inline-block;
+          padding: 10px 70px;
+          color: white;
+          text-decoration: none;
+          font-family: "Open Sans", sans-serif;
+          font-size: 0.8rem;
+          border-radius: 15px;
+          align-self: center;
+        }
+
+        @media screen and (min-width: 800px) {
+          .item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .price-section {
+            align-self: end;
+            text-align: right;
+          }
+        }
+      </style>
+    </main>
+  </body>
+</html>
