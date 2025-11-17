@@ -33,13 +33,263 @@ console.log("supaData", supaData);
     <title>SoundWheel Erhverv</title>
   </head>
   <body>
-    <Navigation />
-    <h1>Astro</h1>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <div class="find-ro-section">
+        <div class="billede">
+          <img src="https://tyvxgiepuwgxaquhxcxp.supabase.co/storage/v1/object/public/img/forside-billede.webp" alt="Billede af mennesker" />
+        </div>
+        <div class="tekst">
+          <h1>Find ro og fokus med lyd</h1>
+          <p>SoundWheel skaber små pauser, der giver klarhed og energi i en travl hverdag. Et værktøj til trivsel – bygget på lyd, musik og nærvær.</p>
+          <a href="/ressourser-og-viden" class="knap">Ressourser og viden</a>
+          <a href="/pakker-og-priser" class="knap">Pakker og priser</a>
+        </div>
+      </div>
 
-    {
-      supaData.map((pkg) => {
-        return <Packages data={pkg} />;
-      })
-    }
+      <div class="hvorfor-section">
+        <h2>Hvorfor Soundwheel</h2>
+        <div class="hvorfor-tekst">
+          <p>Korte lydsessioner hjælper medarbejdere med at finde ro og fokus - selv midt i en travl dag.</p>
+          <p>SoundWheel gør mental sundhed let at integrere i hverdagen - både gennem appen og live-events.</p>
+          <p>Fælles lydoplevelser og workshops skaber sammenhold og giver en fælles pausekultur på arbejdspladsen.</p>
+        </div>
+      </div>
+
+      <div class="virker-section">
+        <div class="tekst">
+          <h2>Hvordan det virker</h2>
+          <p>SoundWheel forvandler musik og fortælling til korte lydrejser, der hjælper mennesker med at finde ro midt i hverdagen. Det kræver ingen erfaring – blot et øjebliks opmærksomhed. Lydsessionerne kan afspilles individuelt i appen eller bruges i fællesskab som en del af workshops og events. På få minutter skaber de nærvær, fokus og en fælles rolig energi.</p>
+        </div>
+        <div class="billede">
+          <img src="https://tyvxgiepuwgxaquhxcxp.supabase.co/storage/v1/object/public/img/image%2076.webp" alt="Billede af telefon" />
+        </div>
+      </div>
+
+      <div class="vores-løsninger-section">
+        <h2>Vores løsninger</h2>
+        <li class="vores-løsninger-afsnit">
+          <div class="packages">
+            <h3 class="tittel">Lydrejser for alle</h3>
+            <p>Adgang til et komplet bibliotek af lydrejser, der kan bruges både individuelt og i grupper.</p>
+            <a class="knap2" href=`/pkg/`> Læs mere </a>
+          </div>
+          <div class="packages">
+            <h3 class="tittel">Let administration</h3>
+            <p>Et brugervenligt adminpanel gør det nemt at tilføje medarbejdere og styre adgangen med ét klik.</p>
+            <a class="knap2" href=`/pkg/`> Læs mere </a>
+          </div>
+          <div class="packages">
+            <h3 class="tittel">Indsigt og værdi</h3>
+            <p>Få statistik og rapporter, der viser, hvordan SoundWheel bidrager til trivsel og engagement i organisationen.</p>
+            <a class="knap2" href=`/pkg/`> Læs mere </a>
+          </div>
+        </li>
+      </div>
+
+      <div class="hvem-section">
+        <div class="tekst">
+          <h2>Hvem er vi</h2>
+          <p>SoundWheel hjælper virksomheder med at styrke medarbejdernes trivsel gennem lyd, musik og fortælling. Vores lydsessioner skaber korte, effektive pauser, der giver ro, fokus og fornyet energi i en travl arbejdsdag. Vi tilbyder både digitale løsninger og live-workshops, der gør det nemt for HR-afdelinger og ledere at integrere mental sundhed i hverdagen. Hos SoundWheel handler det om at skabe balance – ikke ved at sænke tempoet, men ved at skabe rum til at trække vejret midt i det.</p>
+        </div>
+        <div class="billede">
+          <img src="https://tyvxgiepuwgxaquhxcxp.supabase.co/storage/v1/object/public/img/image%2080.webp" alt="Billede af telefon" />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <Footer />
+    </footer>
+
+    <style>
+      p {
+        max-width: 65ch;
+        padding: 13px 10px 25px 0;
+      }
+
+      h1 {
+        font-weight: 600;
+      }
+
+      h2 {
+        font-weight: 550;
+      }
+
+      .find-ro-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 50px 30px 100px 30px;
+        background-color: #f5f3f3;
+      }
+
+      .find-ro-section a {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 25px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        display: inline-block;
+      }
+
+      img {
+        width: 400px;
+        padding-bottom: 30px;
+      }
+
+      .hvorfor-section {
+        padding: 120px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hvorfor-section h2 {
+        padding-bottom: 30px;
+        font-weight: 600;
+      }
+
+      .virker-section {
+        background-color: #f5f3f3;
+        padding: 120px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .virker-section p {
+        padding-bottom: 60px;
+      }
+
+      .vores-løsninger-section h2 {
+        text-align: center;
+      }
+
+      .vores-løsninger-section {
+        padding: 120px 30px;
+      }
+
+      .knap2 {
+        background-color: #3d1112;
+        padding: 10px 100px;
+        color: white;
+        text-decoration: none;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.8rem;
+        border-radius: 15px;
+        align-self: center;
+      }
+
+      .tittel {
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+      }
+
+      .vores-løsninger-afsnit {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 80px;
+      }
+
+      .packages {
+        background-color: #c6d5d7;
+        padding: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hvem-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 50px 30px 100px 30px;
+        background-color: #cec4c3;
+      }
+
+      .hvem-section p {
+        padding-bottom: 50px;
+      }
+
+      @media screen and (min-width: 800px) {
+        .find-ro-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          text-align: left;
+          gap: 250px;
+          padding: 120px 120px;
+        }
+
+        .find-ro-section .tekst {
+          order: 1;
+        }
+
+        .find-ro-section .billede {
+          order: 2;
+        }
+
+        .hvorfor-tekst {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 70px;
+          padding: 0 30px;
+        }
+
+        .hvorfor-tekst p {
+          max-width: 35ch;
+        }
+
+        .virker-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          text-align: left;
+          gap: 250px;
+          padding: 120px 120px;
+        }
+        .virker-section .tekst {
+          order: 2;
+        }
+
+        .virker-section .billede {
+          order: 1;
+        }
+
+        .hvem-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          text-align: left;
+          gap: 250px;
+          padding: 120px 120px;
+        }
+
+        .hvem .tekst {
+          order: 1;
+        }
+
+        .hvems .billede {
+          order: 2;
+        }
+      }
+    </style>
   </body>
 </html>

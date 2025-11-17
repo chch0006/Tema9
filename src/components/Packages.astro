@@ -1,13 +1,49 @@
 ---
 import Button from "./Button.astro";
 import "../styles/style.css";
-const { packages, data } = Astro.props;
+const { data } = Astro.props;
 ---
 
-<li class={packages}>
+<li class="packages">
   <h3>{data.title}</h3>
-  <p>{data.subtext}</p>
-  <p>Abonnement</p>
-  <p>{data.price}</p>
-  <a href=`/pkg/${data.slug}`> jksjkks </a>
+  <p class="subtext">{data.subtext}</p>
+  <p class="abonnement">Abonnement:</p>
+  <div>
+    <span class="big">{data.price}</span>
+    <span class="small">/ år (ekskl. moms)</span>
+  </div>
+  <a class="pkg-link" href=`/pkg/${data.slug}`> Vælg plan </a>
 </li>
+
+<style>
+  .pkg-link {
+    background-color: #3d1112;
+    padding: 10px 100px;
+    color: white;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    align-self: center;
+  }
+
+  .subtext {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+  }
+
+  .abonnement {
+    font-size: 0.8rem;
+  }
+
+  .big {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "Crimson Text", serif;
+  }
+  .small {
+    font-size: 0.9rem;
+    color: #666;
+    font-family: "Crimson Text", serif;
+  }
+</style>
