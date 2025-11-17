@@ -1,0 +1,188 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Article from "../components/Article.astro";
+import Button from "../components/Button.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/style.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+    <title>Pakker og priser</title>
+  </head>
+  <body>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <div class="ressourser-og-viden-top-section">
+        <h1>Ressourser og viden</h1>
+        <p>Viden og ro skaber stærkere arbejdsfællesskaber. Når vi forstår vores mentale rytme, finder vi balancen mellem fokus og velvære.  I en travl hverdag handler trivsel ikke om at gøre mere, men om at skabe rum til at mærke efter.  Når medarbejdere får mulighed for at arbejde i et tempo, der føles naturligt, øges både kreativiteten, samarbejdet og arbejdsglæden..</p>
+      </div>
+      <div class="trivsel-section">
+        <h2>Trivsel gennem lyd, rytme og refleksion</h2>
+        <div class="trivsel-tekst">
+          <div>
+            <h4>Hvordan lyd kan skabe fokus på arbejdet</h4>
+            <p>Lyd påvirker hjernen og kan hjælpe med at skabe ro i en travl hverdag. Ved at bruge lyd som værktøj kan medarbejdere lettere finde fokus og reducere stress.  Små lydimpulser kan skabe en følelse af rytme og nærvær, som styrker koncentrationen.</p>
+          </div>
+          <div>
+            <h4>Skab et roligt arbejdsmiljø</h4>
+            <p>Små justeringer i lyd, lys og rytme kan forbedre trivslen markant. SoundWheel hjælper virksomheder med at skabe de rette rammer gennem lyd og bevidsthed. Et roligt miljø er ikke bare rart – det er fundamentet for produktivitet og trivsel.</p>
+          </div>
+          <div>
+            <h4>Tre hurtige tips til bedre trivsel</h4>
+            <ol>
+              <li>Hold små pauser uden skærm. Det giver hjernen tid til at restituere og mindske overstimulering.</li>
+              <li>Brug korte lydsessioner til at genoplade.  Et par minutters ro kan gøre en stor forskel i løbet af dagen</li>
+              <li>Gå en kort tur – natur og bevægelse giver ro.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="lyd-redskab-section">
+        <div>
+          <h2>Lyd som redskab til ro og fokus</h2>
+          <p>Lyd påvirker vores nervesystem på måder, vi ofte ikke tænker over. De rigtige lydfrekvenser kan hjælpe kroppen med at falde til ro, sænke puls og skabe balance i hjernen.  Når medarbejdere bruger lydbevidsthed i hverdagen – gennem guidede sessioner, baggrundslyde eller korte lydrejser – skabes der små pauser for hjernen, hvor den kan genvinde energi. SoundWheel arbejder ud fra princippet om aktiv lytning – at lyd ikke kun er baggrund, men et aktivt redskab til at skabe fokus, nærvær og trivsel. Det handler ikke om stilhed, men om den rigtige slags lyd på det rigtige tidspunkt. Et øjebliks ro kan være nøglen til en mere effektiv dag</p>
+        </div>
+        <div>
+          <img src="https://tyvxgiepuwgxaquhxcxp.supabase.co/storage/v1/object/public/img/lyd-som-redskab-til-ro-og-fokus.webp" alt="Billede af kvinde med headset" />
+        </div>
+      </div>
+
+      <div class="mentalt-overskud-section">
+        <div class="tekst">
+          <h2>Mentalt overskud i en travl hverdag</h2>
+          <p>I en tid med konstant forandring og mange digitale indtryk bliver det vigtigere end nogensinde at give hjernen pauser. Mentalt overskud handler ikke kun om at undgå stress – det handler om at skabe plads til kreativitet, samarbejde og glæde. Små daglige rutiner kan gøre en stor forskel: et øjebliks stilhed før et møde, en kort lydrejse i frokostpausen, eller en fælles refleksion ved arbejdsdagens afslutning. Disse pauser giver ikke bare ro, men styrker fællesskabet og gør organisationen mere robust. SoundWheel tilbyder virksomheder værktøjer til at indarbejde disse øjeblikke af mental restitution i hverdagen – så trivsel bliver en naturlig del af arbejdsrytmen, ikke en ekstra opgave. Mental fitness begynder med at lytte – både til sig selv og hinanden.</p>
+        </div>
+        <div class="billede">
+          <img src="https://tyvxgiepuwgxaquhxcxp.supabase.co/storage/v1/object/public/img/mentalt-overskud.webp" alt="Billede af folk på arbejde" />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <Footer />
+    </footer>
+    <style>
+      h1 {
+        font-weight: 600;
+      }
+      h2 {
+        font-weight: 550;
+      }
+      .ressourser-og-viden-top-section {
+        padding: 120px 30px;
+      }
+
+      .trivsel-section {
+        background-color: #cec4c3;
+        padding: 120px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .trivsel-section h2 {
+        padding-bottom: 30px;
+        font-weight: 600;
+      }
+
+      p {
+        max-width: 65ch;
+        padding: 13px 10px 25px 0;
+      }
+
+      h4 {
+        padding-top: 30px;
+        font-family: "Crimson Text", serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      ol {
+        max-width: 65ch;
+        padding: 13px 30px 25px 30px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      img {
+        width: 400px;
+      }
+
+      .lyd-redskab-section {
+        background-color: #f5f3f3;
+        padding: 120px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .lyd-redskab-section p {
+        padding-bottom: 60px;
+      }
+
+      .mentalt-overskud-section {
+        background-color: #c6d5d7;
+        padding: 120px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .mentalt-overskud-section p {
+        padding-bottom: 60px;
+      }
+
+      @media screen and (min-width: 800px) {
+        .trivsel-tekst {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 30px;
+          padding: 0 30px;
+        }
+
+        .ressourser-og-viden-top-section {
+          padding: 120px 0 120px 120px;
+        }
+
+        .lyd-redskab-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          text-align: left;
+          gap: 250px;
+          padding: 120px 120px;
+        }
+
+        .mentalt-overskud-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          text-align: left;
+          gap: 250px;
+          padding: 120px 120px;
+        }
+
+        .mentalt-overskud-section .tekst {
+          order: 2;
+        }
+
+        .mentalt-overskud-section .billede {
+          order: 1;
+        }
+      }
+    </style>
+  </body>
+</html>

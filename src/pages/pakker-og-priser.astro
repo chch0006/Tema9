@@ -6,6 +6,19 @@ import Article from "../components/Article.astro";
 import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/style.css";
+
+const url = "https://tyvxgiepuwgxaquhxcxp.supabase.co/rest/v1/Packages";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5dnhnaWVwdXdneGFxdWh4Y3hwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5ODI0NDgsImV4cCI6MjA3ODU1ODQ0OH0.nJ50rD5T9tPRx3PqN7pPuGBmZXtixrVO59MIThBhcac";
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const supaRequest = await fetch(url, options);
+const supaData = await supaRequest.json();
+
+console.log("supaData", supaData);
 ---
 
 <html lang="en">
@@ -17,9 +30,225 @@ import "../styles/style.css";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-    <title>Pakker og priser</title>
+    <title>SoundWheel Erhverv</title>
   </head>
   <body>
-    <h1>Astro</h1>
+    <header>
+      <Navigation />
+    </header>
+    <main>
+      <div class="for-virksomheder-section">
+        <div class="billede">
+          <img src="https://tyvxgiepuwgxaquhxcxp.supabase.co/storage/v1/object/public/img/image%2076.webp" alt="Billede af telefon" />
+        </div>
+        <div class="tekst">
+          <h1>For virksomheder</h1>
+          <p>Giv jeres medarbejdere adgang til hurtige mentale pauser, der styrker energi, ro og præstation. SoundWheel leverer lyddrevne visualiseringsforløb til virksomheder – fra onboarding til fuld udrulning.<br /><br />Vi tager os af opsætning, administration og statistik – I får værktøjet og kan sammen skabe den rette kultur for trivsel og engagement.</p>
+          <a href=".packages-container" class="knap">Gå til kontakt</a>
+        </div>
+      </div>
+
+      <div id="fordele-section">
+        <h2>Fordele med SoundWheel Work</h2>
+        <div class="fordele-beskrivelser">
+          <div>
+            <h4>Nem opsætning og adgang</h4>
+            <p>Når SoundWheel er aktiveret, får I fuld adgang uden besvær.  Opret medarbejdere hurtigt og kom i gang med intro­pakke og tutorials.</p>
+          </div>
+          <div>
+            <h4>Trivsel og fokus i hverdagen</h4>
+            <p>Musiskdrevne øvelser designet til at øge fokus, reducere stress og skabe mental balance. Med seks temaer – hjælper appen medarbejderne med at finde ro og energi i hverdagen.</p>
+          </div>
+          <div>
+            <h4>Fleksibel og personlig oplevelse</h4>
+            <p>Vælg dansk eller engelsk guide, slå guiden til eller fra, og find det tempo der passer til jer. Appen tilpasser sig både individuelle behov og virksomhedens fælles rytme.</p>
+          </div>
+          <div>
+            <h4>For hele familien</h4>
+            <p>SoundWheel Kids tilbyder lydrejser for børn med fire temaer – Det gør SoundWheel til en løsning, der styrker trivsel både på arbejde og derhjemme.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="løsning-section">
+          <h2>Find den rigtige løsning</h2>
+          <p>Giv jeres medarbejder bedre trivsel og fokus gennem lydrejser. Vel den løsning, der passer bedst til jeres team.</p>
+        </div>
+        <div class="packages-container">
+          {
+            supaData.map((pkg) => {
+              return <Packages data={pkg} />;
+            })
+          }
+        </div>
+        <div class="live-section">
+          <h2>Book en live session</h2>
+          <p>Er du nysgerrig på, hvordan det fungere og hvordan det kan skabe ro, fokus og energi hos dine medarbejdere?  Book en enkelt session, hvor vi kommer ud til jer og afholder en guidet oplevelse i jeres egne rammer. Det er en nem måde at prøve konceptet af, uden forpligtelser – bare en inspirerende pause i hverdagen, hvor alle kan være med.</p>
+          <a href="https://www.soundwheel.com/da/contact" class="session"> Book en session her </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="help-section">
+          <h2>Brug for Rådgivning?</h2>
+          <p>Kontakt os for at få rådgivning om, hvilken pakke der passer bedst til jeres virksomhed. På den måde sikrer i jer den rette løsning, med vores hjælp.</p>
+          <p id="mail">erhverv@soundwheel.dk</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <Footer />
+    </footer>
+
+    <style>
+      h1 {
+        font-weight: 600;
+        padding-left: 12px;
+      }
+      .for-virksomheder-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 50px 30px 100px 30px;
+      }
+
+      .for-virksomheder-section p {
+        max-width: 75ch;
+        padding-bottom: 30px;
+      }
+
+      .for-virksomheder-section h2 {
+        padding-left: 10px;
+      }
+
+      .for-virksomheder-section a {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 55px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.8rem;
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+      }
+
+      img {
+        width: 400px;
+        padding-bottom: 30px;
+      }
+
+      #fordele-section {
+        background-color: #f5f3f3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 100px 30px;
+      }
+
+      #fordele-section p {
+        padding: 8px 15px 60px 15px;
+      }
+
+      #fordele-section h4 {
+        font-weight: 600;
+        font-size: 1.2rem;
+        font-family: "Crimson Text", serif;
+      }
+
+      #fordele-section h2 {
+        padding-bottom: 40px;
+      }
+
+      .løsning-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 120px 30px 0 30px;
+      }
+
+      .packages-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 80px;
+      }
+
+      .live-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 35px 30px 120px 30px;
+      }
+
+      .help-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #cec4c3;
+        padding: 120px 30px;
+      }
+
+      h2 {
+        font-weight: 550;
+      }
+
+      p {
+        max-width: 65ch;
+        padding: 13px 10px 25px 10px;
+      }
+
+      .session {
+        background-color: #3d1112;
+        padding: 10px 70px;
+        color: white;
+        text-decoration: none;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.8rem;
+        border-radius: 15px;
+      }
+      #mail {
+        border: 2px solid black;
+        border-radius: 30px;
+        padding: 8px 55px;
+        font-size: 0.8rem;
+      }
+
+      @media screen and (min-width: 800px) {
+        .for-virksomheder-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          text-align: left;
+          gap: 250px;
+          padding: 120px 120px;
+        }
+
+        .for-virksomheder-section .tekst {
+          order: 1;
+        }
+
+        .for-virksomheder-section .billede {
+          order: 2;
+        }
+
+        .fordele-beskrivelser {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 30px;
+          padding: 0 30px;
+        }
+      }
+    </style>
   </body>
 </html>
